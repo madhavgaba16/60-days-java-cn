@@ -1,7 +1,7 @@
 package sorting.java;
 
 public class selection {
-    public static void Main(Strings []args){
+    public static void main(String[] args){
         System.out.println("hello");
     }
 }
