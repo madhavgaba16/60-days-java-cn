@@ -1,5 +1,5 @@
 public class bubble{
-    public static void bubble(int []arr){
+    public static void bubblesort (int []arr){
         for(int i =arr.length-1;i>0;i--){
             for(int j =0 ;j<i;j++){
 
