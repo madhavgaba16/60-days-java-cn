@@ -6,8 +6,8 @@ public class arraylist {
         ArrayList<Integer> list1 = new ArrayList<>();
         list1.add(15);
         list1.add(20);
-        list1.get(1);
-        
+        int data = list1.get(1);
+        System.out.println(data);
 
            
     }
