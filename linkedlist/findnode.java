@@ -1,4 +1,4 @@
-import org.w3c.dom.Node;
+package linkedlist;
 
 public class findnode {
     public static int findNode(Node<Integer> head, int n) {
