@@ -1,10 +1,13 @@
 package linkedlist;
      public class Node<T> {
+        public static void main(String[] args) {
+            
+        
         T data;
         Node<T> next;
     
-        public Node(T data) {
+        Node(T data) {
             this.data = data;
         }
-
-    }
+       }
+    }   
