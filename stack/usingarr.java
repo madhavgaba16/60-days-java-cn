@@ -26,9 +26,9 @@ package stack;
            data[top]= element;// here we need to throw exception if size if completely filled and no more element can be added;
       }
       public int pop(){
-        int temp = data[top];
+        int temp = data[top]; 
          top--;
-         return temp;// also need to throw exception when if no element in present or sixe in zero ;
+         return temp;// also need to throw exception when if no element in present or siZe in zero ;
       }
-      
+
    }
