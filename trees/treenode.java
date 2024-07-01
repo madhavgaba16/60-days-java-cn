@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 
 public class treenode<T> {
-  
+
 int data;
 ArrayList<treenode<T>> children ;
-public treenode(T data){
-    this.data= data;
+public treenode(int  data){
+    this.data= data ;
     children  = new ArrayList<>();
 }
 public static void main(String[]args){
