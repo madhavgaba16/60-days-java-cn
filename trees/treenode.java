@@ -1,30 +1,57 @@
 package trees;
 
+
 import java.util.ArrayList;
+import java.util.Scanner;
 
+public class TreeNode<T> {
+    int data;
+    ArrayList<TreeNode<T>> children;
 
-public class treenode<T> {
+    public TreeNode(int data) {
+        this.data = data;
+        children = new ArrayList<>();
+    }
 
-int data;
-ArrayList<treenode<T>> children ;
-public treenode(int  data){
-    this.data= data ;
-    children  = new ArrayList<>();
+    // Method to recursively take input and construct a tree
+    public static TreeNode<Integer> takeInput() {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the value of the node: ");
+        int n = s.nextInt();
+        TreeNode<Integer> root = new TreeNode<Integer>(n);
+
+        System.out.println("Enter the number of children: ");
+        int childCount = s.nextInt();
+        for (int i = 0; i < childCount; i++) {
+            TreeNode<Integer> child = takeInput(); // Recursive call to create child nodes
+            root.children.add(child);
+        }
+
+        return root;
+    }
+
+    // Method to print the tree in a readable format (preorder traversal)
+    public static void print(TreeNode<Integer> root) {
+        if (root == null)
+            return;
+
+        System.out.print(root.data + " -> ");
+        for (int i = 0; i < root.children.size(); i++) {
+            System.out.print(root.children.get(i).data + " ");
+        }
+        System.out.println();
+
+        for (int i = 0; i < root.children.size(); i++) {
+            print(root.children.get(i));
+        }
+    }
+
+    public static void main(String[] args) {
+        TreeNode<Integer> root = takeInput();
+        print(root);
+    }
 }
-public static void main(String[]args){
-treenode<Integer> root = new treenode<Integer>(4);
-treenode<Integer> node1 = new treenode<Integer>(2);
-treenode<Integer> node2 = new treenode<Integer>(3);
-treenode<Integer> node3= new treenode<Integer>(5);
-treenode<Integer> node4= new treenode<Integer>(6);
-root.children.add(node1);
-root.children.add(node2);
-root.children.add(node3);
-node2.children.add(node4);
 
-System.out.println(root);
 
-}
-    
-    
-}
+//taking input recursively 
+
