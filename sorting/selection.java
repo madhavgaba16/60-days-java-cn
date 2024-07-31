@@ -1,7 +1,7 @@
 
 
 public class selection {
-    public static void selectionsort (int [] arr){
+    public static void selectionsort (int [] arr){  
         for (int i=0 ;i<arr.length-1;i++){
             int min = arr[i];
             int minindex = i;
