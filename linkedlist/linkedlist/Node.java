@@ -1,5 +1,8 @@
 package linkedlist;
      public class Node<T> {
+        /**
+         * @param args
+         */
         public static void main(String[] args) {
             
         

@@ -14,3 +14,4 @@ public class midpoint {
         
         return slow;
 }
+public Node<Integer> 
