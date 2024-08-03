@@ -3,27 +3,27 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 
-public class TreeNode {
+public class treeNode {
     int data;
-    ArrayList<TreeNode> children;
+    ArrayList<treeNode> children;
 
-    public TreeNode(int data) {
+    public treeNode(int data) {
         this.data = data;
         children = new ArrayList<>();
     }
 
     // Method to recursively take input and construct a tree
-    public static TreeNode takeInput() {
+    public static treeNode takeInput() {
         try (Scanner scanne = new Scanner(System.in)) {
             try {
                 System.out.println("Enter the value of the node: ");
                 int value = scanne.nextInt();
-                TreeNode node = new TreeNode(value);
+                treeNode node = new treeNode(value);
 
                 System.out.println("Enter the number of children: ");
                 int childCount = scanne.nextInt();
                 for (int i = 0; i < childCount; i++) {
-                    TreeNode child = takeInput(); // Recursive call to create child nodes
+                    treeNode child = takeInput(); // Recursive call to create child nodes
                     node.children.add(child);
                 }
 
@@ -36,7 +36,7 @@ public class TreeNode {
     }
 
     // Method to print the tree in a readable format (preorder traversal)
-    public static void print(TreeNode root) {
+    public static void print(treeNode root) {
         if (root == null) {
             return;
         }
@@ -51,13 +51,14 @@ public class TreeNode {
         }
         System.out.println();
 
-        for (TreeNode child : root.children) {
+        for (treeNode child : root.children) {
             print(child);
         }
     }
 
     public static void main(String[] args) {
-        TreeNode root = takeInput();
+        treeNode root = takeInput();
+        System.out.println("enter root data");
         print(root);
     }
 }

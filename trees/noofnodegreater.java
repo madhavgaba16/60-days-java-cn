@@ -1,7 +1,7 @@
 package trees;
 
 public class noofnodegreater {
-    public static int numNodeGreater(TreeNode<Integer> root, int x) {
+    public static int numNodeGreater(treeNode<Integer> root, int x) {
         if (root == null)
             return 0;
     

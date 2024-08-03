@@ -1,7 +1,7 @@
 package trees;
 
 public class sumofAllNodes {
-    public static int sumOfAllNode(TreeNode<Integer> root){
+    public static int sumOfAllNode(treeNode<Integer> root){
 		if(root == null){
 			return 0 ;
 

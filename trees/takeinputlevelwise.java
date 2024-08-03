@@ -1,5 +1,6 @@
-package trees;
-public TreeNode<Integer> takeinputlevelwise() {
-   
+ package trees;
+
+class takeinputlevelwise {
+      
     
 }
