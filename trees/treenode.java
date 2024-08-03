@@ -1,12 +1,11 @@
 package trees;
 
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class TreeNode<T> {
+public class TreeNode {
     int data;
-    ArrayList<TreeNode<T>> children;
+    ArrayList<TreeNode> children;
 
     public TreeNode(int data) {
         this.data = data;
@@ -14,44 +13,50 @@ public class TreeNode<T> {
     }
 
     // Method to recursively take input and construct a tree
-    public static TreeNode<Integer> takeInput() {
-        Scanner s = new Scanner(System.in);
-        System.out.println("Enter the value of the node: ");
-        int n = s.nextInt();
-        TreeNode<Integer> root = new TreeNode<Integer>(n);
+    public static TreeNode takeInput() {
+        Scanner scanner = new Scanner(System.in);
+        try {
+            System.out.println("Enter the value of the node: ");
+            int value = scanner.nextInt();
+            TreeNode node = new TreeNode(value);
 
-        System.out.println("Enter the number of children: ");
-        int childCount = s.nextInt();
-        for (int i = 0; i < childCount; i++) {
-            TreeNode<Integer> child = takeInput(); // Recursive call to create child nodes
-            root.children.add(child);
+            System.out.println("Enter the number of children: ");
+            int childCount = scanner.nextInt();
+            for (int i = 0; i < childCount; i++) {
+                TreeNode child = takeInput(); // Recursive call to create child nodes
+                node.children.add(child);
+            }
+
+            return node;
+        } finally {
+            // Closing scanner is not ideal here; consider managing it outside of the method
+            // scanner.close();
         }
-
-        return root;
     }
 
     // Method to print the tree in a readable format (preorder traversal)
-    public static void print(TreeNode<Integer> root) {
-        if (root == null)
+    public static void print(TreeNode root) {
+        if (root == null) {
             return;
+        }
 
         System.out.print(root.data + " -> ");
-        for (int i = 0; i < root.children.size(); i++) {
-            System.out.print(root.children.get(i).data + " ");
+        if (root.children.isEmpty()) {
+            System.out.print("No children");
+        } else {
+            for (int i = 0; i < root.children.size(); i++) {
+                System.out.print(root.children.get(i).data + " ");
+            }
         }
         System.out.println();
 
-        for (int i = 0; i < root.children.size(); i++) {
-            print(root.children.get(i));
+        for (TreeNode child : root.children) {
+            print(child);
         }
     }
 
     public static void main(String[] args) {
-        TreeNode<Integer> root = takeInput();
+        TreeNode root = takeInput();
         print(root);
     }
 }
-
-
-//taking input recursively 
-
