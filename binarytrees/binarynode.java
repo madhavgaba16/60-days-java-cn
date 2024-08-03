@@ -5,6 +5,9 @@ public class binarynode<T> {
  public binarynode<T> left;
 
  public binarynode<T> right;
+ public binarynode( T data){
+        this.data = data;
+    }
    
     
 }
