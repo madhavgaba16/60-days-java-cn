@@ -1,7 +1,7 @@
 package trees;
-
-import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.ArrayList;
+
 
 public class TreeNode {
     int data;
@@ -14,23 +14,24 @@ public class TreeNode {
 
     // Method to recursively take input and construct a tree
     public static TreeNode takeInput() {
-        Scanner scanner = new Scanner(System.in);
-        try {
-            System.out.println("Enter the value of the node: ");
-            int value = scanner.nextInt();
-            TreeNode node = new TreeNode(value);
+        try (Scanner scanne = new Scanner(System.in)) {
+            try {
+                System.out.println("Enter the value of the node: ");
+                int value = scanne.nextInt();
+                TreeNode node = new TreeNode(value);
 
-            System.out.println("Enter the number of children: ");
-            int childCount = scanner.nextInt();
-            for (int i = 0; i < childCount; i++) {
-                TreeNode child = takeInput(); // Recursive call to create child nodes
-                node.children.add(child);
+                System.out.println("Enter the number of children: ");
+                int childCount = scanne.nextInt();
+                for (int i = 0; i < childCount; i++) {
+                    TreeNode child = takeInput(); // Recursive call to create child nodes
+                    node.children.add(child);
+                }
+
+                return node;
+            } finally {
+                // Closing scanner is not ideal here; consider managing it outside of the method
+                // scanner.close();
             }
-
-            return node;
-        } finally {
-            // Closing scanner is not ideal here; consider managing it outside of the method
-            // scanner.close();
         }
     }
 
