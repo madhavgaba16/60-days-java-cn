@@ -7,6 +7,23 @@ import java.util.Scanner;
 
 
 public class binarynodeuse {
+    public static int diameter (binarynode<Integer> root){
+        if(root==null){
+            return 0;
+        }
+        int option1=height(root.left)+height(root.right);
+        int option2= height(root.left);
+        int option3 = height(root.right);
+        return Math.max(option1, Math.max(option2, option3));
+
+    }
+    public static int height (binarynode<Integer> root){
+        if(root==null){
+            return 0;
+        }
+        int ans = 1+Math.max(height(root.left),height(root.right));
+        return ans ;
+    }
     public static binarynode<Integer> takeinputlevelwise(){
         Scanner e = new Scanner(System.in);
       Queue<binarynode<Integer>> pendingnodes = new LinkedList<>();
