@@ -1,9 +1,41 @@
 
     package binarytrees;
+    import java.util.LinkedList;
+import java.util.Queue;
 
 import java.util.Scanner;
 
+
 public class binarynodeuse {
+    public static binarynode<Integer> takeinputlevelwise(){
+        Scanner e = new Scanner(System.in);
+      Queue<binarynode<Integer> pendingnodes = new LinkedList<>();
+      int rootdata = e.nextInt();
+      if(rootdata==-1){
+           return null;
+      }
+      binarynode<Integer> root = new binarynode<Integer>(rootdata);
+     
+    
+
+      
+      pendingnodes.add(root);
+      while(!pendingnodes.isEmpty()){
+         
+         binarynode<Integer> frontdata1= pendingnodes.remove();
+         System.out.println("Enter the left child of "+frontdata1.data );
+         int leftchild = e.nextInt();
+         binarynode<Integer> leftchild1= new binarynode<Integer>(leftchild);
+         if(leftchild!=-1){
+            root.left= leftchild1;
+        }
+         
+        
+      }
+
+
+        
+    }
     public static void print(binarynode<Integer> root){
         if(root==null ){
             return ;
