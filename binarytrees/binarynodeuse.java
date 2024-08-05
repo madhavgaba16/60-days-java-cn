@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class binarynodeuse {
     public static binarynode<Integer> takeinputlevelwise(){
         Scanner e = new Scanner(System.in);
-      Queue<binarynode<Integer> pendingnodes = new LinkedList<>();
+      Queue<binarynode<Integer>> pendingnodes = new LinkedList<>();
       int rootdata = e.nextInt();
       if(rootdata==-1){
            return null;
@@ -33,7 +33,7 @@ public class binarynodeuse {
         
       }
 
-
+       return root;
         
     }
     public static void print(binarynode<Integer> root){
