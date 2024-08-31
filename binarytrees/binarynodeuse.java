@@ -24,6 +24,7 @@ public class binarynodeuse {
         int ans = 1+Math.max(height(root.left),height(root.right));
         return ans ;
     }
+    @SuppressWarnings("resource")
     public static binarynode<Integer> takeinputlevelwise(){
         Scanner e = new Scanner(System.in);
       Queue<binarynode<Integer>> pendingnodes = new LinkedList<>();
@@ -49,6 +50,7 @@ public class binarynodeuse {
          
         
       }
+      e.close();
 
        return root;
         
@@ -93,8 +95,8 @@ public class binarynodeuse {
  
     }
      public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-      binarynode<Integer> root = takeInput(s);
+        // Scanner s = new Scanner(System.in);
+      binarynode<Integer> root = takeinputlevelwise();
       print(root);
      }
     
